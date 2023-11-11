@@ -1,5 +1,38 @@
 ## Practitioner Python Course
-check
+### Instance, Class, and Static Methods
+```python 
+class MyClass:
+	def instance_method(self):
+		return "instance method called", self
+	
+	@classmethod
+	def class_method(cls):
+		return "class method called", cls
+	
+	@staticmethod
+	def static_method():
+		return "static method called"
+```
+
+- Instance Method: It takes, at least, one parameter `self` that points to an instance of `MyClass`
+- Class Method: Instead of `self` parameter, class methods take `cls` argument. They cannot modify object instance state. However, class method can still modify class state that applies across all instances of the class. **Design patterns: Factory method**
+```python
+class Pizza:
+    def __init__(self, ingredients):
+        self.ingredients = ingredients
+
+    def __repr__(self):
+        return f'Pizza({self.ingredients!r})'
+
+    @classmethod
+    def margherita(cls):
+        return cls(['mozzarella', 'tomatoes'])
+
+    @classmethod
+    def prosciutto(cls):
+        return cls(['mozzarella', 'tomatoes', 'ham'])
+```
+- Static Method: They take neither `self` nor `cls` arguments, and so, they cannot modify neither instance nor class state
 ### Standardized Error Handling
 Cleaner way of dealing with errors:
 ```python
