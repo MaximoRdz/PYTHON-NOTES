@@ -1,4 +1,5 @@
 ## Practitioner Python Course
+check
 ### Standardized Error Handling
 Cleaner way of dealing with errors:
 ```python
